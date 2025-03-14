@@ -121,3 +121,9 @@ work_dirs/
 *.pth
 *.py~
 *.sh~
+/demo/ballondatasets
+demo/balloon_dataset.zip
+/demo/checkpoints
+/demo/tutorial_exps
+/demo/configs
+outputs/vis/demo.jpg
