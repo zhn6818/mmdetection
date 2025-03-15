@@ -43,8 +43,8 @@ conda install pytorch torchvision cpuonly -c pytorch
 
 ```shell
 pip install -U openmim
-mim install mmengine
-mim install "mmcv>=2.0.0"
+mim install mmengine==0.10.0
+mim install mmcv==2.1.0
 ```
 
 **注意：** 在 MMCV-v2.x 中，`mmcv-full` 改名为 `mmcv`，如果你想安装不包含 CUDA 算子精简版，可以通过 `mim install "mmcv-lite>=2.0.0rc1"` 来安装。

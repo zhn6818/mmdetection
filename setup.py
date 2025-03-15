@@ -172,8 +172,15 @@ def add_mim_extension():
                 shutil.rmtree(tar_path)
 
             if mode == 'symlink':
-                src_relpath = osp.relpath(src_path, osp.dirname(tar_path))
-                os.symlink(src_relpath, tar_path)
+                try:
+                    src_relpath = osp.relpath(src_path, osp.dirname(tar_path))
+                    os.symlink(src_relpath, tar_path)
+                except (OSError, AttributeError):
+                    # 如果创建符号链接失败，回退到复制模式
+                    if osp.isfile(src_path):
+                        shutil.copyfile(src_path, tar_path)
+                    elif osp.isdir(src_path):
+                        shutil.copytree(src_path, tar_path)
             elif mode == 'copy':
                 if osp.isfile(src_path):
                     shutil.copyfile(src_path, tar_path)
