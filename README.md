@@ -451,3 +451,7 @@ This project is released under the [Apache 2.0 license](LICENSE).
 - [MIM](https://github.com/open-mmlab/mim): MIM installs OpenMMLab packages.
 - [MMEval](https://github.com/open-mmlab/mmeval): A unified evaluation library for multiple machine learning libraries.
 - [Playground](https://github.com/open-mmlab/playground): A central hub for gathering and showcasing amazing projects built upon OpenMMLab.
+
+* python tools/train.py configs/mask_rcnn/mask-rcnn_r101_fpn_2x_coco.py --work-dir daizhuangtest/
+* python tools/train.py daizhuangtest/mask-rcnn_r101_fpn_2x_coco_m.py
+* python tools/test.py daizhuangtest/mask-rcnn_r101_fpn_2x_coco_m.py daizhuangtest/mask-rcnn_r101_fpn_2x_coco_epoch_24.pth --show-dir daizhuangtest/
